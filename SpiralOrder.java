@@ -10,32 +10,31 @@ public class SpiralOrder {
     }
 
     static void spiralOrderArrangement(int[][] arr, int r, int c){
-        int left = 0;
-        int right = c-1;
-        int top = 0;
-        int bottom = r-1;
+        int top = 0, left = 0, right = c-1, bottom = r-1;
+        int totalelement = 1;
         
-        
-        System.out.println("Spiral order of Matrix :");
-        for(int i = left; i <= right; i++){
-            System.out.print(arr[top][i]+" ");
+        while(left <= right){
+            for(int i = left; i <= right && totalelement <= r*c; i++){
+                System.out.print(arr[top][i]+" ");
+                totalelement++;
+            }
+            top++;
+            for(int i = top; i <= bottom && totalelement <= r*c; i++){
+                System.out.print(arr[i][right]+" ");
+                totalelement++;
+            }
+            right--;
+            for(int i = right; i >= left && totalelement <= r*c; i--){
+                System.out.print(arr[bottom][i]+" ");
+                totalelement++;
+            }
+            bottom--;
+            for(int i = bottom; i >= top && totalelement <= r*c; i--){
+                System.out.print(arr[i][left]+" ");
+                totalelement++;
+            }
+            left++;
         }
-        top++;
-        for(int i = left+1; i <= right; i++){
-            System.out.print(arr[i][right]+" ");
-        }
-        right--;
-        for(int i = right; i >= left; i--){
-            System.out.print(arr[bottom][i]+" ");
-        }
-        bottom--;
-        for(int i = left; i <= top; i++){
-            System.out.print(arr[top][i]+" ");
-        }
-        left++;
-
-
-
     }
 
     public static void main(String[] args) {
