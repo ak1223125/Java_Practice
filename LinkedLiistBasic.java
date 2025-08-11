@@ -13,10 +13,15 @@ public class LinkedLiistBasic {
 
     public static void printLinkedList(Node head){
         Node temp = head;
-        for(int i = 1; i <= 5; i++){
+        int i = 0;
+        System.out.println("All Elements in Linked List :");
+        for(i = 0; temp != null; i++){
            System.out.print(temp.data+" ");
            temp = temp.next; 
         }
+        System.out.println();
+        System.out.println("Total Element in Linked List :");
+        System.out.println(i);
     }
 
     public static void main(String[] args) {
